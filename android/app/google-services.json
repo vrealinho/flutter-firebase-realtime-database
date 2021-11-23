@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "612148032782",
+    "firebase_url": "https://mi-2021-22-acd16-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "mi-2021-22-acd16",
+    "storage_bucket": "mi-2021-22-acd16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612148032782:android:bd23ec7028aaec5da9935f",
+        "android_client_info": {
+          "package_name": "pt.estgp.auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612148032782-h0jejbklgvssep94jba6onovc88glblj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhuQOrtZS4T1YxSuud7fsoKpMhS7waAM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612148032782-h0jejbklgvssep94jba6onovc88glblj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612148032782:android:646266ba6964418fa9935f",
+        "android_client_info": {
+          "package_name": "pt.estgp.database"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612148032782-h0jejbklgvssep94jba6onovc88glblj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhuQOrtZS4T1YxSuud7fsoKpMhS7waAM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612148032782-h0jejbklgvssep94jba6onovc88glblj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612148032782:android:cb95fab3df2055eba9935f",
+        "android_client_info": {
+          "package_name": "pt.estgp.mi_messaging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612148032782-h0jejbklgvssep94jba6onovc88glblj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhuQOrtZS4T1YxSuud7fsoKpMhS7waAM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612148032782-h0jejbklgvssep94jba6onovc88glblj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
