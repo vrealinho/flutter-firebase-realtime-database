@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "344153976447",
+    "firebase_url": "https://mi-2022-23-default-rtdb.firebaseio.com",
+    "project_id": "mi-2022-23",
+    "storage_bucket": "mi-2022-23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344153976447:android:039fe78c7d88612999594a",
+        "android_client_info": {
+          "package_name": "pt.estgp.mi_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344153976447-b3k5mr0ed2q7qgi3rpno65jtb06ufe57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8samhWXuzcY1FZFykhS0onvtETLbwynI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344153976447-b3k5mr0ed2q7qgi3rpno65jtb06ufe57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344153976447:android:88d63adf9e4cc33199594a",
+        "android_client_info": {
+          "package_name": "pt.estgp.mi_database"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344153976447-b3k5mr0ed2q7qgi3rpno65jtb06ufe57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8samhWXuzcY1FZFykhS0onvtETLbwynI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344153976447-b3k5mr0ed2q7qgi3rpno65jtb06ufe57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344153976447:android:33fe4777ef5a1d6b99594a",
+        "android_client_info": {
+          "package_name": "pt.estgp.mi_messaging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344153976447-b3k5mr0ed2q7qgi3rpno65jtb06ufe57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8samhWXuzcY1FZFykhS0onvtETLbwynI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344153976447-b3k5mr0ed2q7qgi3rpno65jtb06ufe57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
