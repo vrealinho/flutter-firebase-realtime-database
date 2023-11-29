@@ -5,6 +5,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:mi_database/list_students.dart';
 import 'package:flutter/material.dart';
 
+import 'firebase_options.dart';
+
 void main() async {
   runApp(const MyApp());
 }
@@ -34,7 +36,9 @@ class MyHomePage extends StatefulWidget {
 class MyHomePageState extends State<MyHomePage> {
   Future<FirebaseApp> _initializeFirebase() async {
     WidgetsFlutterBinding.ensureInitialized();
-    Future<FirebaseApp> firebaseApp = Firebase.initializeApp();
+    FirebaseApp firebaseApp = await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
     return firebaseApp;
   }
 
@@ -42,32 +46,32 @@ class MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Registar aluno'),
+        title: const Text('Register Student'),
       ),
       body: FutureBuilder(
-          future: _initializeFirebase(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return Center(
-                  child: SingleChildScrollView(
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
-                          Text('Registar aluno',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w200,
-                                  fontSize: 30,
-                                  fontFamily: 'Roboto',
-                                  fontStyle: FontStyle.italic)),
-                          RegisterStudent(),
-                        ]),
-                  )
-              );
-            }
-            return const Center(
-              child: CircularProgressIndicator(),
+        future: _initializeFirebase(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return Center(
+                child: SingleChildScrollView(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const <Widget>[
+                        Text('Register Student',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w200,
+                                fontSize: 30,
+                                fontFamily: 'Roboto',
+                                fontStyle: FontStyle.italic)),
+                        RegisterStudent(),
+                      ]),
+                )
             );
-          },
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
     );
   }
@@ -82,12 +86,12 @@ class RegisterStudent extends StatefulWidget {
 
 class RegisterStudentState extends State<RegisterStudent> {
   final _formKey = GlobalKey<FormState>();
-  final listOfCourses = ['Mestrado em Informática', 'PG Data Science and Digital Transformation', 'Mestrado em Gestão de PME', 'Mestrado em Design de Identidade Digital'];
-  String? dropdownCourseValue = 'Mestrado em Informática';
-  final listOfYears = ['1º ano', '2º ano'];
-  String? dropdownYearValue = '1º ano';
+  final listOfCourses = ['Master in Informatics', 'PG Data Science and Digital Transformation', 'Master in GPME', 'Master in Design'];
+  String? dropdownCourseValue = 'Master in Informatics';
+  final listOfYears = ['1º year', '2º year'];
+  String? dropdownYearValue = '1º year';
   final nameController = TextEditingController();
-  final dbRef = FirebaseDatabase.instance.ref('alunos');
+  final dbRef = FirebaseDatabase.instance.ref('students');
 
   @override
   Widget build(BuildContext context) {
@@ -101,13 +105,13 @@ class RegisterStudentState extends State<RegisterStudent> {
                 child: TextFormField(
                   controller: nameController,
                   decoration: const InputDecoration(
-                    hintText: 'Qual nome do aluno?',
-                    labelText: 'Nome',
+                    hintText: 'Name of student?',
+                    labelText: 'Name',
                   ),
                   // The validator receives the text that the user has entered.
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Nome';
+                      return 'Name';
                     }
                     return null;
                   },
@@ -119,7 +123,7 @@ class RegisterStudentState extends State<RegisterStudent> {
                   value: dropdownCourseValue,
                   icon: const Icon(Icons.arrow_downward),
                   decoration: const InputDecoration(
-                    labelText: 'Qual o curso do aluno?',
+                    labelText: 'Course of student?',
                   ),
                   items: listOfCourses.map((String value) {
                     return DropdownMenuItem<String>(
@@ -134,7 +138,7 @@ class RegisterStudentState extends State<RegisterStudent> {
                   },
                   validator: (dynamic value) {
                     if (value.isEmpty) {
-                      return 'Selecione o curso';
+                      return 'Select the course';
                     }
                     return null;
                   },
@@ -146,7 +150,7 @@ class RegisterStudentState extends State<RegisterStudent> {
                   value: dropdownYearValue,
                   icon: const Icon(Icons.arrow_downward),
                   decoration: const InputDecoration(
-                    labelText: 'Qual o ano curricular?',
+                    labelText: 'Curricular year?',
                   ),
                   items: listOfYears.map((String value) {
                     return DropdownMenuItem<String>(
@@ -161,7 +165,7 @@ class RegisterStudentState extends State<RegisterStudent> {
                   },
                   validator: (dynamic value) {
                     if (value.isEmpty) {
-                      return 'Selecione o ano curricular';
+                      return 'Select the curricular year';
                     }
                     return null;
                   },
@@ -176,12 +180,12 @@ class RegisterStudentState extends State<RegisterStudent> {
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
                             dbRef.push().set({
-                              'nome': nameController.text,
-                              'ano': dropdownYearValue,
-                              'curso': dropdownCourseValue
+                              'name': nameController.text,
+                              'year': dropdownYearValue,
+                              'course': dropdownCourseValue
                             }).then((_) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(content: Text('Aluno adicionado')));
+                                  const SnackBar(content: Text('Student registered')));
                               nameController.clear();
                             }).catchError((onError) {
                               ScaffoldMessenger.of(context)
@@ -189,17 +193,17 @@ class RegisterStudentState extends State<RegisterStudent> {
                             });
                           }
                         },
-                        child: const Text('Registar'),
+                        child: const Text('Register'),
                       ),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ListStudents(title: 'Listagem de alunos')),
+                                builder: (context) => const ListStudents(title: 'List of students')),
                           );
                         },
-                        child: const Text('Listar'),
+                        child: const Text('List'),
                       ),
                     ],
                   )),
