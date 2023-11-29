@@ -10,7 +10,7 @@ class ListStudents extends StatefulWidget {
 }
 
 class ListStudentsState extends State<ListStudents> {
-  final dbRef = FirebaseDatabase.instance.ref('alunos');
+  final dbRef = FirebaseDatabase.instance.ref('students');
   List<Map<dynamic, dynamic>> lists = [];
 
   @override
@@ -36,9 +36,9 @@ class ListStudentsState extends State<ListStudents> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Nome: ${lists[index]['nome']}'),
-                            Text('Curso: ${lists[index]['curso']}'),
-                            Text('Ano curricular: ${lists[index]['ano']}'),
+                            Text('Name: ${lists[index]['name']}'),
+                            Text('Course: ${lists[index]['course']}'),
+                            Text('Curricular year: ${lists[index]['year']}'),
                           ],
                         ),
                       );
