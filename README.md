@@ -1,3 +1,3 @@
-# Exemplo Firebase Database
+# Firebase Realtime Database Example
 
-Documentação: [https://pub.dev/packages/firebase_database](https://pub.dev/packages/firebase_database)
+Documentation: [https://pub.dev/packages/firebase_database](https://pub.dev/packages/firebase_database)
